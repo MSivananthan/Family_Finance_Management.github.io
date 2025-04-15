@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 262 83% 98%;
+    --foreground: 262 40% 20%;
+    --card: 262 83% 98%;
+    --card-foreground: 262 40% 20%;
+    --popover: 262 83% 98%;
+    --popover-foreground: 262 40% 20%;
+    --primary: 262 89% 75%;
+    --primary-foreground: 262 40% 20%;
+    --secondary: 262 83% 98%;
+    --secondary-foreground: 262 40% 20%;
+    --muted: 262 83% 98%;
+    --muted-foreground: 262 20% 65%;
+    --accent: 262 89% 75%;
+    --accent-foreground: 262 40% 20%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 262 40% 98%;
+    --border: 262 83% 98%;
+    --input: 262 83% 98%;
+    --ring: 262 89% 75%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-none;
+  }
+  body {
+    @apply bg-background text-foreground m-0 p-0 font-sans;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-glow {
+  @apply transition-all duration-300;
+}
+
+.button-glow:hover {
+  @apply shadow-[0_0_15px_rgba(147,51,234,0.5)];
+}
+
+/* Add container hover effects */
+.card,
+.dropdown-menu-content,
+.dialog-content {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Style all input fields */
+input {
+  @apply focus:border-purple-500 outline-none;
+}
